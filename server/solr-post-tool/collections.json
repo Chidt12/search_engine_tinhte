@@ -1,0 +1,19 @@
+[{
+    "name": "post_collection",
+    "schema": {
+        "id": "string",
+        "origin_id": "string",
+        "name": "text_general",
+        "origin_name": "string",
+        "cover_image": "string",
+        "parent_category": "text_general",
+        "category": "text_general",
+        "origin_date": "pint",
+        "crawl_date": "pint",
+        "author_name": "text_general",
+        "author_avatar": "string",
+        "craw_link": "string",
+        "content": "text_general",
+        "origin_content": "string"
+    }
+}]

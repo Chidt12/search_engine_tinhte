@@ -1,0 +1,15 @@
+create table if not exists Post (
+    id int primary key not null auto_increment,
+    origin_id varchar(127),
+    name varchar(511),
+    cover_image text,
+    parent_category varchar(255) not null,
+    category varchar(255) not null,
+    origin_date int,
+    crawl_date int,
+    author_name varchar(255),
+    author_avatar text,
+    crawl_link text,
+    content text,
+    index(origin_id);
+)

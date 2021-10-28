@@ -1,0 +1,11 @@
+boolean: Boolean
+booleans: Array of Boolean
+string: String
+strings: Array of string
+text_general: Text
+pint: Integer
+plong: Long
+pdouble: Double
+pdoubles: Array of Double
+pints: Array of Integer
+plongs: Array of Long

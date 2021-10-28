@@ -1,0 +1,2 @@
+FROM zookeeper:3.6.2
+# ADD ./zoo.cfg /conf/zoo.cfg

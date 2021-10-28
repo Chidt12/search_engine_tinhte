@@ -1,0 +1,5 @@
+{
+    "watch": ["src/**, src/**/*"],
+    "ignore": ["dist/"],
+    "exec": "ts-node --transpile-only -r dotenv/config src/app.ts"
+}
