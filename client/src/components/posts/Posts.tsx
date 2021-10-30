@@ -101,9 +101,11 @@ const Posts = () => {
                             </div>
                             <div className="overflow-y-scroll w-full flex mt-3">
                                 {state.value.page_list.map((index) => (
-                                    <div className={`
+                                    <div 
+                                    onClick={()=> setPage(index + 1)}
+                                    className={`
                                      ${index + 1 == page ? "bg-opacity-100" : "bg-opacity-50"}
-                                    mr-2 mb-3 h-9 w-9 flex-shrink-0 flex justify-center items-center bg-black text-white rounded font-medium`}>
+                                    mr-2 mb-3 h-9 w-9 flex-shrink-0 cursor-pointer flex justify-center items-center bg-black text-white rounded font-medium`}>
                                         {index + 1}
                                     </div>
                                 ))}
