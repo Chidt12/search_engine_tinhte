@@ -40,22 +40,30 @@ export class QueryBuilder {
     getQueryParam() {
         var keys = Object.keys(this.query_obj);
         var results = [];
+        console.log("=====================")
 
         for (var i = 0; i < keys.length; i++) {
             var value = this.query_obj[keys[i]];
 
             if (isArray(value)) {
                 results.push(` (${value.map(e => ` ${keys[i]}:${wrapText(e)} `).join('OR')}) `);
+                console.log("1-----")
+                console.log(results);
             } else if (value.or) {
 
                 var value_keys = Object.keys(value.or);
                 value_keys = value_keys.filter(e => value.or[e].toString().replace(/\s/g, '') != '')
                 results.push(` (${value_keys.map((e, index) => ` ${e}:${wrapText(value.or[e])}^${index + 1} `).join('OR')}) `);
+                console.log("2-----")
+                console.log(results);
             } else {
                 if (value.toString().replace(/\s/g, '') == '') {
                     continue;
                 }
+                
                 results.push(` (${keys[i]}:${wrapText(value)}) `)
+                console.log("3-----")
+                console.log(results);
             }
         }
 

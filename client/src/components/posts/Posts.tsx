@@ -27,6 +27,7 @@ const Posts = () => {
     const [search, setSearch] = useState('');
     const throttled = useThrottle(search.trimRight().trimLeft(), 800);
     const [page, setPage] = useState(1);
+    const [first_load, setFirstLoad] = useState(true);
 
     const [change_key_words, setChangeKeyWords] = useState(false);
 
@@ -39,6 +40,8 @@ const Posts = () => {
             page: change_key_words ? 1 : page,
             q: throttled
         })
+
+        setFirstLoad(false)
 
         if (change_key_words) {
             setPage(1);
@@ -78,7 +81,7 @@ const Posts = () => {
                 </div>
 
                 <div className="w-full">
-                    {state.loading ? (<>
+                    {first_load ? (<>
                         {[1, 2, 3].map((x, index) => (
                             <div key={index} className="border border-gray-50 shadow rounded-md p-4 mt-5 w-full mx-auto">
                                 <div className="animate-pulse flex space-x-4">
